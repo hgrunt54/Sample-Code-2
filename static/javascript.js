@@ -1,13 +1,42 @@
-function popDDs(dropdown) {
-    var Colors = ['Red', 'Blue', 'Yellow', 'Green'];
-    dd = document.getElementById(dropdown);
-    let option;
-    for (let i = 0; i < Colors.length; i++) {
-        option = document.createElement('option');
-        option.value = Colors[i];
-        option.text = Colors[i];
-        dd.add(option);
+const routes = {
+    host: 'http://localhost:5556',
+    jsonPostData: function (data) {
+        return {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(data)
+        }
     }
+}
+
+function popDDs(dropdown) {
+    let dd = document.getElementById(dropdown);
+    dd.length = 0;
+
+    fetch(routes.host + '/colors')
+        .then(
+            function (response) {
+                if (response.status !== 200) {
+                    console.warn('Looks we we have a problem here! Status Code: ' + response.status);
+                    return;
+                }
+
+                return response.json()
+            })
+        .then(function (json) {
+            let option;
+            for (let i = 0; i < json.Colors.length; i++) {
+                option = document.createElement('option');
+                option.text = json.Colors[i];
+                option.value = json.Colors[i];
+                dd.add(option);
+            }
+        })
+        .catch(function (err) {
+            console.error('Fetch Error -', err);
+        });
 }
 
 function changeBackground() {
