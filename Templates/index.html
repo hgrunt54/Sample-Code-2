@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Code 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/stylesheet.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Sample Code 2 With JavaScript</h1>
+        <form id="dropdowns">
+            <div class="form-row">
+                <label for="bgColor">Background Color: </label>
+                <div class="col-2">
+                    <select id="bgColor" onchange="changeBackground()" class="form-control form-control-sm">
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Yellow">Yellow</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="fColor">Font Color: </label>
+                <div class="col-2">
+                    <select id="fColor" onchange="changeFont()" class="form-control form-control-sm">
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Yellow">Yellow</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div id="MainSection">
+            <div id="p1">The Background Color is White</div>
+            <div id="p2">The Font Color is Black</div>
+        </div>
+    </div>
+    <script src="static/javascript.js"></script>
+</body>
+</html>
