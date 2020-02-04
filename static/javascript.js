@@ -1,3 +1,15 @@
+function popDDs(dropdown) {
+    var Colors = ['Red', 'Blue', 'Yellow', 'Green'];
+    dd = document.getElementById(dropdown);
+    let option;
+    for (let i = 0; i < Colors.length; i++) {
+        option = document.createElement('option');
+        option.value = Colors[i];
+        option.text = Colors[i];
+        dd.add(option);
+    }
+}
+
 function changeBackground() {
     var backColor = document.getElementById('bgColor').value;
     var main = document.getElementById('MainSection');
@@ -15,3 +27,7 @@ function changeFont() {
     document.getElementById('p2').innerHTML = p2;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    popDDs('bgColor');
+    popDDs('fColor');
+});

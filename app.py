@@ -9,8 +9,6 @@ wsgi_app = app.wsgi_app
 def index():
     return render_template('index.html')
 
-
-
 if __name__ == '__main__':
     import os
     HOST = os.environ.get('SERVER_HOST', 'localhost')
