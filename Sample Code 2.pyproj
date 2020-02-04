@@ -30,6 +30,8 @@
     <Compile Include="app.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Colors2.db" />
     <Content Include="requirements.txt" />
     <Content Include="static\javascript.js" />
     <Content Include="static\stylesheet.css" />
